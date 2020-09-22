@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="jquery.timepicker.js"></script>
+<link rel="stylesheet" href="jquery.timepicker.css">
+  </head>
+  <body class="dx-viewport">
+    <!-- <p><span id="spanExampleTarget" style="background:#f00; padding:0 10px; margin-right:100px;" class="ui-timepicker-input"></span> -->
+        <input id="spanExampleTarget" class="ui-timepicker-input">
+        <button id="openSpanExample">Pick Time</button>
+    </p>
+
+    <script>
+  $('#spanExampleTarget').timepicker({ 
+    timeFormat: 'G:i',
+    show2400: true,
+    step: 1,
+   });
+$('#spanExampleTarget').on('timeFormatError', function(e){
+    alert('enter time');
+	console.log($('#spanExampleTarget').timepicker('getTime'));
+});
+$('#openSpanExample').on('click', function() {
+	$('#spanExampleTarget').timepicker();
+});
+    </script>
+  </body>
+</html>
